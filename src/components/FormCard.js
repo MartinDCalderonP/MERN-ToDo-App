@@ -8,7 +8,7 @@ import {
 	CardActions,
 	Button,
 } from '@material-ui/core';
-import CardNotification from './CardNotification';
+import Notification from './Notification';
 
 export default function FormCard({ handleRefreshTasks, getTask }) {
 	const useStyles = makeStyles((theme) => ({
@@ -117,7 +117,7 @@ export default function FormCard({ handleRefreshTasks, getTask }) {
 					</CardActions>
 				</Card>
 			</form>
-			<CardNotification message={message} />
+			<Notification message={message} />
 		</>
 	);
 }

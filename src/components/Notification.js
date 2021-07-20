@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Snackbar, IconButton } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 
-export default function CardNotification({ message }) {
+export default function Notification({ message }) {
 	const [open, setOpen] = useState(false);
 
 	useEffect(() => {

@@ -13,7 +13,8 @@ import {
 } from '@material-ui/core';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
-import CardNotification from './CardNotification';
+import Notification from './Notification';
+import Swal from 'sweetalert2';
 
 export default function TasksTable({ refreshTasks, handleGetTask }) {
 	const useStyles = makeStyles((theme) => ({
@@ -42,20 +43,31 @@ export default function TasksTable({ refreshTasks, handleGetTask }) {
 	};
 
 	const handleDeleteButton = (taskId) => {
-		if (window.confirm('Are you sure to delete it?')) {
-			fetch(`${URL}/${taskId}`, {
-				method: 'DELETE',
-				headers: {
-					Accept: 'application/json',
-					'Content-Type': 'application/json',
-				},
-			})
-				.then((res) => res.json())
-				.then((data) => {
-					setMessage(data.status);
-					getTasks();
-				});
-		}
+		Swal.fire({
+			title: 'Are you sure?',
+			text: "You won't be able to revert this!",
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes, delete it!',
+			reverseButtons: true,
+		}).then((result) => {
+			if (result.isConfirmed) {
+				fetch(`${URL}/${taskId}`, {
+					method: 'DELETE',
+					headers: {
+						Accept: 'application/json',
+						'Content-Type': 'application/json',
+					},
+				})
+					.then((res) => res.json())
+					.then((data) => {
+						setMessage(data.status);
+						getTasks();
+					});
+			}
+		});
 	};
 
 	return (
@@ -102,7 +114,7 @@ export default function TasksTable({ refreshTasks, handleGetTask }) {
 					</TableBody>
 				</Table>
 			</TableContainer>
-			<CardNotification message={message} />
+			<Notification message={message} />
 		</>
 	);
 }
