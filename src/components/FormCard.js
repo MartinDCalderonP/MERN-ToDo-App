@@ -9,14 +9,30 @@ import {
 	Button,
 } from '@material-ui/core';
 import Notification from './Notification';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 export default function FormCard({ handleRefreshTasks, getTask }) {
+	const [marginRight, setMarginRight] = useState('20px');
+	const [marginBottom, setMarginBottom] = useState('0px');
+	const mid = useMediaQuery('(max-width:600px)');
+
+	useEffect(() => {
+		if (mid) {
+			setMarginRight('0px');
+			setMarginBottom('20px');
+		} else {
+			setMarginRight('20px');
+			setMarginBottom('0px');
+		}
+	}, [mid, setMarginRight]);
+
 	const useStyles = makeStyles((theme) => ({
 		form: {
 			flex: '0.4',
 		},
 		card: {
-			margin: '20px',
+			marginRight: marginRight,
+			marginBottom: marginBottom,
 		},
 		cardContent: {
 			display: 'flex',
