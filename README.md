@@ -1,6 +1,6 @@
 # MERN ToDo App
 
-This MERN ToDo App is a tasks manager app made with MERN stack with Material-UI for the components and the styles. It is responsive and is deployed on Netlify: [https://mern-to-do-app.netlify.app/](https://mern-to-do-app.netlify.app/). The backend is deployed on Heroku: [https://github.com/MartinDCalderonP/MERN-ToDo-App-Back](https://github.com/MartinDCalderonP/MERN-ToDo-App-Back)
+This MERN ToDo App is a tasks manager app made with MERN stack with Material-UI for the components and the styles. It is responsive and is deployed on Netlify: [https://mern-to-do-app.netlify.app/](https://mern-to-do-app.netlify.app/). The backend is deployed on Heroku and his repo is in: [https://github.com/MartinDCalderonP/MERN-ToDo-App-Back](https://github.com/MartinDCalderonP/MERN-ToDo-App-Back)
 
 # Things that are working now
 
