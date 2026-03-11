@@ -3278,8 +3278,8 @@ packages:
     resolution: {integrity: sha512-CYcENa+FtcUKLmhhqyctpclsq7QF38pKjZHsGNiSQF5r4FtoKDWabFDl3hzaEQMvT1LHEysw5twgLvpYYb4vbw==}
     engines: {node: ^10.12.0 || >=12.0.0}
 
-  flatted@3.3.4:
-    resolution: {integrity: sha512-3+mMldrTAPdta5kjX2G2J7iX4zxtnwpdA8Tr2ZSjkyPSanvbZAcy6flmtnXbEybHrDcU9641lxrMfFuUxVz9vA==}
+  flatted@3.4.1:
+    resolution: {integrity: sha512-IxfVbRFVlV8V/yRaGzk0UVIcsKKHMSfYw66T/u4nTwlWteQePsxe//LjudR1AMX4tZW3WFCh3Zqa/sjlqpbURQ==}
 
   flatten@1.0.3:
     resolution: {integrity: sha512-dVsPA/UwQ8+2uoFe5GHtiBMu48dWLTdsuEd7CKGlZlD78r1TTWBvDuFaFGKCo/ZfEr95Uk56vZoX86OsHkUeIg==}
@@ -8309,7 +8309,11 @@ snapshots:
       jest-runner: 26.6.3
       jest-runtime: 26.6.3
     transitivePeerDependencies:
+      - bufferutil
+      - canvas
       - supports-color
+      - ts-node
+      - utf-8-validate
 
   '@jest/transform@26.6.2':
     dependencies:
@@ -11276,11 +11280,11 @@ snapshots:
 
   flat-cache@3.2.0:
     dependencies:
-      flatted: 3.3.4
+      flatted: 3.4.1
       keyv: 4.5.4
       rimraf: 3.0.2
 
-  flatted@3.3.4: {}
+  flatted@3.4.1: {}
 
   flatten@1.0.3: {}
 
@@ -12170,7 +12174,11 @@ snapshots:
       pretty-format: 26.6.2
       throat: 5.0.0
     transitivePeerDependencies:
+      - bufferutil
+      - canvas
       - supports-color
+      - ts-node
+      - utf-8-validate
 
   jest-leak-detector@26.6.2:
     dependencies:
